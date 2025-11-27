@@ -1,4 +1,4 @@
-package com.trainingjava;
+package com.trainingjava.studikasus;
 
 import org.junit.jupiter.api.Test;
 import java.io.ByteArrayInputStream;
@@ -7,7 +7,7 @@ import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class CetakBintangTest {
+class HitungMundurTest {
 
     @Test
     void testMain() {
@@ -17,12 +17,12 @@ class CetakBintangTest {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
 
-        CetakBintang.main(new String[]{});
+        HitungMundur.main(new String[]{});
 
         String output = outContent.toString();
-        assertTrue(output.contains("*"));
-        assertTrue(output.contains("**"));
-        assertTrue(output.contains("***"));
-        assertTrue(output.contains("****"));
+        assertTrue(output.contains("3"));
+        assertTrue(output.contains("2"));
+        assertTrue(output.contains("1"));
+        assertTrue(output.contains("0"));
     }
 }

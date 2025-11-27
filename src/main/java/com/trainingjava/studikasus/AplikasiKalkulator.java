@@ -1,4 +1,4 @@
-package com.trainingjava;
+package com.trainingjava.studikasus;
 
 import java.util.ArrayList;
 import java.util.Scanner;

@@ -1,8 +1,8 @@
-package com.trainingjava;
+package com.trainingjava.studikasus;
 
 import java.util.Scanner;
 
-public class HitungKlasifikasi {
+public class KlasifikasiNilaiMahasiswa {
     public static Double hitungRataRata(Double[] nilai) {
         Double total = 0.00;
         Double rataRata;

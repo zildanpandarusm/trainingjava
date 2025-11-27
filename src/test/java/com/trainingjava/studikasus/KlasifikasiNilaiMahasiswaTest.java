@@ -1,4 +1,4 @@
-package com.trainingjava;
+package com.trainingjava.studikasus;
 
 import org.junit.jupiter.api.Test;
 import java.io.ByteArrayInputStream;
@@ -8,18 +8,18 @@ import java.io.PrintStream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class HitungKlasifikasiTest {
+class KlasifikasiNilaiMahasiswaTest {
 
     @Test
     void testHitungRataRata() {
         Double[] nilai1 = {80.0, 90.0, 70.0};
-        assertEquals(80.0, HitungKlasifikasi.hitungRataRata(nilai1));
+        assertEquals(80.0, KlasifikasiNilaiMahasiswa.hitungRataRata(nilai1));
 
         Double[] nilai2 = {60.0, 50.0, 55.0};
-        assertEquals(55.0, HitungKlasifikasi.hitungRataRata(nilai2));
+        assertEquals(55.0, KlasifikasiNilaiMahasiswa.hitungRataRata(nilai2));
 
         Double[] nilai3 = {40.0, 30.0, 50.0};
-        assertEquals(40.0, HitungKlasifikasi.hitungRataRata(nilai3));
+        assertEquals(40.0, KlasifikasiNilaiMahasiswa.hitungRataRata(nilai3));
     }
 
     @Test
@@ -30,7 +30,7 @@ class HitungKlasifikasiTest {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
 
-        HitungKlasifikasi.main(new String[]{});
+        KlasifikasiNilaiMahasiswa.main(new String[]{});
 
         String output = outContent.toString();
         assertTrue(output.contains("Rata-rata nilai Anda adalah 80.0"));
@@ -45,7 +45,7 @@ class HitungKlasifikasiTest {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
 
-        HitungKlasifikasi.main(new String[]{});
+        KlasifikasiNilaiMahasiswa.main(new String[]{});
 
         String output = outContent.toString();
         assertTrue(output.contains("Rata-rata nilai Anda adalah 55.0"));
@@ -60,7 +60,7 @@ class HitungKlasifikasiTest {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
 
-        HitungKlasifikasi.main(new String[]{});
+        KlasifikasiNilaiMahasiswa.main(new String[]{});
 
         String output = outContent.toString();
         assertTrue(output.contains("Rata-rata nilai Anda adalah 40.0"));

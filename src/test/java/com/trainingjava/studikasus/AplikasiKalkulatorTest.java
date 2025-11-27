@@ -1,4 +1,4 @@
-package com.trainingjava;
+package com.trainingjava.studikasus;
 
 import org.junit.jupiter.api.Test;
 import java.io.ByteArrayInputStream;

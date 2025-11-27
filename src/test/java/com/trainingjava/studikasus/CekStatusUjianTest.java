@@ -1,4 +1,4 @@
-package com.trainingjava;
+package com.trainingjava.studikasus;
 
 import org.junit.jupiter.api.Test;
 import java.io.ByteArrayInputStream;
@@ -7,36 +7,32 @@ import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class CetakDeretBilanganGenapTest {
+class CekStatusUjianTest {
 
     @Test
-    void testAngkaLebihDari100() {
-        String input = "150\n";
+    void testLulusRemedialTidakLulus() {
+        String input = "80\n65\n40\n-1\n";
         ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
         System.setIn(in);
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
 
-        CetakDeretBilanganGenap.main(new String[]{});
+        CekStatusUjian.inputNilai();
 
         String output = outContent.toString();
-        assertTrue(output.contains("Angka yang dmasukkan lebih dari 100"));
+        assertTrue(output.contains("Selamat Anda lulus"));
+        assertTrue(output.contains("Anda harus remedial"));
+        assertTrue(output.contains("Anda tidak lulus"));
     }
 
     @Test
-    void testAngkaKurangDari100() {
-        String input = "10\n";
+    void testMain() {
+        String input = "-1\n";
         ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
         System.setIn(in);
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
 
-        CetakDeretBilanganGenap.main(new String[]{});
-
-        String output = outContent.toString();
-        assertTrue(output.contains(" 2"));
-        assertTrue(output.contains(" 4"));
-        assertTrue(output.contains(" 6"));
-        assertTrue(output.contains(" 8"));
+        CekStatusUjian.main(new String[]{});
     }
 }
